@@ -1,6 +1,3 @@
 [submodule "blog/plugins/ipynb"]
 	path = blog/plugins/ipynb
 	url = git://github.com/danielfrg/pelican-ipynb.git
-[submodule "notes"]
-	path = notes
-	url = https://github.com/varao/notes
