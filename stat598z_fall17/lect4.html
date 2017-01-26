@@ -11890,7 +11890,7 @@ a.anchor-link {
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>age <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">25L</span><span class="p">,</span><span class="m">24L</span><span class="p">,</span><span class="m">21L</span><span class="p">),</span>  <span class="c1"># Warning: df is an</span>
@@ -11905,7 +11905,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">print</span><span class="p">(</span>df<span class="p">)</span>
@@ -11935,7 +11935,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">typeof</span><span class="p">(</span>df<span class="p">)</span>
@@ -11963,7 +11963,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">class</span><span class="p">(</span>df<span class="p">)</span>
@@ -12002,10 +12002,10 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kp">print</span><span class="p">(</span>df<span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">])</span>
+<div class=" highlight hl-r"><pre><span></span><span class="kp">print</span><span class="p">(</span>df<span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="s">&#39;age&#39;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12018,7 +12018,7 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 2.4
+<pre>[1] 24
 </pre>
 </div>
 </div>
@@ -12029,7 +12029,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">print</span><span class="p">(</span>df<span class="p">[</span><span class="m">2</span><span class="p">,])</span>
@@ -12057,7 +12057,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">print</span><span class="p">(</span>df<span class="o">$</span>GPA<span class="p">)</span>
@@ -12076,6 +12076,34 @@ a.anchor-link {
 <pre>[1] 3.6 2.4 2.8
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">nrow</span><span class="p">(</span>df<span class="p">)</span><span class="o">*</span><span class="kp">ncol</span><span class="p">(</span>df<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+9
+</div>
+
 </div>
 
 </div>
@@ -12110,7 +12138,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">rownames</span><span class="p">(</span>df<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span> <span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="s">&quot;Carol&quot;</span><span class="p">)</span>
@@ -12123,10 +12151,10 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kp">print</span><span class="p">(</span>df<span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>df<span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">30L</span><span class="p">;</span> <span class="kp">print</span><span class="p">(</span>df<span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12143,6 +12171,7 @@ a.anchor-link {
 Alice  25  TRUE 3.6
 Bob    24  TRUE 2.4
 Carol  21 FALSE 2.8
+4      30    NA  NA
 </pre>
 </div>
 </div>
@@ -12163,7 +12192,7 @@ Carol  21 FALSE 2.8
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kn">library</span><span class="p">(</span><span class="s">&quot;datasets&quot;</span><span class="p">)</span>
@@ -12174,51 +12203,16 @@ Carol  21 FALSE 2.8
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-'data.frame'
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">print</span><span class="p">(</span><span class="kp">head</span><span class="p">(</span>mtcars<span class="p">))</span> <span class="c1"># Print part of a large object</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
-Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -12257,7 +12251,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>levels()</code>  specifies possible values the factor can take</p>
 <ul>
-<li>E.g. <code>c(”male”, ”female”)</code></li>
+<li>E.g. <code>c("male", "female")</code></li>
 </ul>
 <p><code>class = factor</code> tells R to check for violations</p>
 
@@ -12266,7 +12260,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Character vector for 4 students</span>
@@ -12280,7 +12274,7 @@ grades_bad <span class="o">&lt;-</span> <span class="kt">c</span><span class="p"
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Factor vector for 4 students</span>
@@ -12294,7 +12288,7 @@ grades <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">print</span><span class="p">(</span>grades<span class="p">)</span>
@@ -12304,25 +12298,10 @@ grades <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] a a b f
-Levels: a b f
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">typeof</span><span class="p">(</span>grades<span class="p">)</span>
@@ -12332,25 +12311,10 @@ Levels: a b f
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-'integer'
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">class</span><span class="p">(</span>grades<span class="p">)</span>
@@ -12360,25 +12324,10 @@ Levels: a b f
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-'factor'
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">levels</span><span class="p">(</span>grades<span class="p">)</span> <span class="c1"># Not quite what we wanted!</span>
@@ -12388,30 +12337,10 @@ Levels: a b f
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<ol class=list-inline>
-	<li>'a'</li>
-	<li>'b'</li>
-	<li>'f'</li>
-</ol>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>grades <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;f&quot;</span><span class="p">))</span>
@@ -12422,24 +12351,10 @@ str<span class="p">(</span>grades<span class="p">)</span>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> Factor w/ 3 levels &#34;a&#34;,&#34;b&#34;,&#34;f&#34;: 1 1 2 3
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>grades<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;c&quot;</span>
@@ -12449,24 +12364,10 @@ str<span class="p">(</span>grades<span class="p">)</span>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Warning message in `[&lt;-.factor`(`*tmp*`, 2, value = &#34;c&#34;):
-“invalid factor level, NA generated”</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>str<span class="p">(</span>grades<span class="p">)</span>
@@ -12476,24 +12377,10 @@ str<span class="p">(</span>grades<span class="p">)</span>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> Factor w/ 3 levels &#34;a&#34;,&#34;b&#34;,&#34;f&#34;: 1 NA 2 3
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>grades <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;f&quot;</span><span class="p">),</span>
@@ -12507,7 +12394,7 @@ str<span class="p">(</span>grades<span class="p">)</span>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>str<span class="p">(</span>grades<span class="p">)</span>
@@ -12517,48 +12404,16 @@ str<span class="p">(</span>grades<span class="p">)</span>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> Factor w/ 4 levels &#34;a&#34;,&#34;b&#34;,&#34;c&#34;,&#34;f&#34;: 1 1 2 1 4
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">table</span><span class="p">(</span>grades<span class="p">)</span>   <span class="c1"># table also works with other data-types</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
-<div class="output_text output_subarea ">
-<pre>grades
-a b c f 
-3 1 0 1 </pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -12575,7 +12430,7 @@ a b c f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>grades <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;f&quot;</span><span class="p">),</span>
@@ -12588,52 +12443,16 @@ grades
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<ol class=list-inline>
-	<li>a</li>
-	<li>a</li>
-	<li>b</li>
-	<li>f</li>
-</ol>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>grades<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&gt;</span> grades<span class="p">[</span><span class="m">3</span><span class="p">]</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-TRUE
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -12645,7 +12464,9 @@ TRUE
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>gl()</code>: Generate factors levels</p>
 <p>Usage (from the R documentation):</p>
-<p><code>gl(n, k, length = n * k, labels = seq_len(n), ordered = FALSE )</code></p>
+<div class="highlight"><pre><span></span><span class="kp">gl</span><span class="p">(</span>n<span class="p">,</span> k<span class="p">,</span> length <span class="o">=</span> n <span class="o">*</span> k<span class="p">,</span> labels <span class="o">=</span> <span class="kp">seq_len</span><span class="p">(</span>n<span class="p">),</span>
+   ordered <span class="o">=</span> <span class="kc">FALSE</span> <span class="p">)</span>
+</pre></div>
 <p>Look at the examples there:</p>
 
 </div>
@@ -12653,7 +12474,7 @@ TRUE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># First control, then treatment:</span>
@@ -12664,43 +12485,10 @@ TRUE
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<ol class=list-inline>
-	<li>Control</li>
-	<li>Control</li>
-	<li>Control</li>
-	<li>Control</li>
-	<li>Control</li>
-	<li>Control</li>
-	<li>Control</li>
-	<li>Control</li>
-	<li>Treat</li>
-	<li>Treat</li>
-	<li>Treat</li>
-	<li>Treat</li>
-	<li>Treat</li>
-	<li>Treat</li>
-	<li>Treat</li>
-	<li>Treat</li>
-</ol>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">gl</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span> <span class="c1"># 20 alternating 1s and 2s</span>
@@ -12710,90 +12498,16 @@ TRUE
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<ol class=list-inline>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-	<li>1</li>
-	<li>2</li>
-</ol>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kp">gl</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span> <span class="c1"># alternating pairs of 1s and 2s</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<ol class=list-inline>
-	<li>1</li>
-	<li>1</li>
-	<li>2</li>
-	<li>2</li>
-	<li>1</li>
-	<li>1</li>
-	<li>2</li>
-	<li>2</li>
-	<li>1</li>
-	<li>1</li>
-	<li>2</li>
-	<li>2</li>
-	<li>1</li>
-	<li>1</li>
-	<li>2</li>
-	<li>2</li>
-	<li>1</li>
-	<li>1</li>
-	<li>2</li>
-	<li>2</li>
-</ol>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -12821,7 +12535,7 @@ x       <span class="o">&lt;-</span> <span class="s">&quot;[&lt;-&quot;</span><s
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the R language definition:</p>
-<p><code>names(x) &lt;- c(”a”,”b”)</code></p>
+<p><code>names(x) &lt;- c("a","b")</code></p>
 <p>is equivalent to</p>
 <div class="highlight"><pre><span></span><span class="s">&#39;*tmp*&#39;</span> <span class="o">&lt;-</span> x
   x <span class="o">&lt;-</span> <span class="s">&quot;names&lt;-&quot;</span><span class="p">(</span><span class="s">&#39;*tmp*&#39;</span><span class="p">,</span> value <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">))</span> 
