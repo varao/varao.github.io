@@ -12359,8 +12359,7 @@ rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</s
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Environments-in-R">Environments in R<a class="anchor-link" href="#Environments-in-R">&#182;</a></h2><p>An environment is a kind of named list of symbol-value pairs</p>
-<p>Each environment has a parent environment</p>
+<h3 id="Environments-in-R">Environments in R<a class="anchor-link" href="#Environments-in-R">&#182;</a></h3><p>An environment is a kind of named list of symbol-value pairs</p>
 
 </div>
 </div>
@@ -12436,6 +12435,19 @@ rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</s
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>local_env<span class="o">$</span>my_local
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">parent.env</span><span class="p">(</span>local_env<span class="p">)</span> <span class="c1"># Each environment has a parent environment</span>
 </pre></div>
 
 </div>
