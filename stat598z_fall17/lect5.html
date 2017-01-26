@@ -11909,7 +11909,7 @@ executes it and a value is returned</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Since <code>else</code> is optional, don’t put it on its own line!</p>
 <p>Can disperse with braces for one-line statements:</p>
-<p><code>if(condition) statement1   else statement2</code></p>
+<p><code>if(condition) statement1  else statement2</code></p>
 <p>if/else statements can be nested:</p>
 <div class="highlight"><pre><span></span><span class="kr">if</span><span class="p">(</span> condition1 <span class="p">)</span> <span class="p">{</span>
    statements1
@@ -11934,6 +11934,7 @@ executes it and a value is returned</p>
 <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
   p_logp <span class="o">&lt;-</span> <span class="m">0</span> <span class="c1"># Assuming p &gt;= 0</span>
 <span class="p">}</span>
+<span class="kp">print</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span>p<span class="p">,</span>p_logp<span class="p">))</span>
 </pre></div>
 
 </div>
@@ -11996,10 +11997,10 @@ p_logp <span class="o">&lt;-</span> <span class="s">&#39;if&#39;</span><span cla
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Logical-operators">Logical operators<a class="anchor-link" href="#Logical-operators">&#182;</a></h2><p><code>:</code> logical negation</p>
+<h2 id="Logical-operators">Logical operators<a class="anchor-link" href="#Logical-operators">&#182;</a></h2><p><code>!</code> logical negation</p>
 <p><code>&amp;</code> and <code>&amp;&amp;</code>: logical ‘and’
-<code>|</code> and <code>||</code> : logical ‘or’
-<code>&amp;</code> and <code>|</code> perform elementwise comparisons on vectors</p>
+<code>|</code> and <code>||</code> : logical ‘or’</p>
+<p><code>&amp;</code> and <code>|</code> perform elementwise comparisons on vectors</p>
 
 </div>
 </div>
@@ -12039,7 +12040,7 @@ p_logp <span class="o">&lt;-</span> <span class="s">&#39;if&#39;</span><span cla
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kt">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="kt">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="kt">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="kt">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">&amp;</span> <span class="bp">T</span>
 </pre></div>
 
 </div>
@@ -12052,7 +12053,7 @@ p_logp <span class="o">&lt;-</span> <span class="s">&#39;if&#39;</span><span cla
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kt">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">|</span> <span class="kc">NA</span>
+<div class=" highlight hl-r"><pre><span></span><span class="kc">NA</span> <span class="o">|</span> <span class="kt">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12065,7 +12066,7 @@ p_logp <span class="o">&lt;-</span> <span class="s">&#39;if&#39;</span><span cla
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kc">TRUE</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="kc">pi</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">{</span><span class="kp">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span> <span class="kc">TRUE</span><span class="p">}</span>
+<div class=" highlight hl-r"><pre><span></span><span class="kc">TRUE</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="kc">pi</span> <span class="o">&gt;</span><span class="m">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">{</span><span class="kp">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span> <span class="kc">TRUE</span><span class="p">}</span> <span class="o">||</span> <span class="kc">TRUE</span>
 </pre></div>
 
 </div>
@@ -12128,7 +12129,7 @@ p_logp <span class="o">&lt;-</span> <span class="s">&#39;if&#39;</span><span cla
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Explicit-looping:-for(),-while()-and-repeat()">Explicit looping: <code>for()</code>, <code>while()</code> and <code>repeat()</code><a class="anchor-link" href="#Explicit-looping:-for(),-while()-and-repeat()">&#182;</a></h3><div class="highlight"><pre><span></span><span class="kr">for</span><span class="p">(</span>elem <span class="kr">in</span> vect<span class="p">)</span> <span class="p">{</span>  <span class="c1"># Can be vector or list over</span>
-   Do_stuff_with_elem  <span class="c1"># successive elements of vect</span>
+   Do_stuff_with_elem <span class="c1"># successive elements of vect</span>
  <span class="p">}</span>
 </pre></div>
 
@@ -12242,6 +12243,19 @@ p_logp <span class="o">&lt;-</span> <span class="s">&#39;if&#39;</span><span cla
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>H <span class="o">&lt;-</span> <span class="o">-</span><span class="kp">sum</span><span class="p">(</span> p <span class="o">*</span> <span class="kp">log</span><span class="p">(</span>p<span class="p">)</span> <span class="p">)</span> <span class="c1"># Vectorized but wrong (p[i] == 0?)</span>
 </pre></div>
 
@@ -12256,10 +12270,8 @@ p_logp <span class="o">&lt;-</span> <span class="s">&#39;if&#39;</span><span cla
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>H <span class="o">&lt;-</span> <span class="m">0</span>
-<span class="c1"># Correct but slow</span>
-<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="kp">length</span><span class="p">(</span>p<span class="p">))</span>
-<span class="kr">if</span><span class="p">(</span>p<span class="p">[</span>i<span class="p">]</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span> H <span class="o">&lt;-</span> H <span class="o">-</span> p<span class="p">[</span>i<span class="p">]</span> <span class="o">*</span> <span class="kp">log</span><span class="p">(</span>p<span class="p">[</span>i<span class="p">])</span>
-pos <span class="o">&lt;-</span> p <span class="o">&gt;</span> <span class="m">0</span>
+<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="kp">length</span><span class="p">(</span>p<span class="p">))</span> <span class="c1"># Correct but slow</span>
+  <span class="kr">if</span><span class="p">(</span>p<span class="p">[</span>i<span class="p">]</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span> H <span class="o">&lt;-</span> H <span class="o">-</span> p<span class="p">[</span>i<span class="p">]</span> <span class="o">*</span> <span class="kp">log</span><span class="p">(</span>p<span class="p">[</span>i<span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12272,7 +12284,8 @@ pos <span class="o">&lt;-</span> p <span class="o">&gt;</span> <span class="m">0
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>H <span class="o">&lt;-</span> <span class="o">-</span> <span class="kp">sum</span><span class="p">(</span> p<span class="p">[</span>pos<span class="p">]</span> <span class="o">*</span> <span class="kp">log</span><span class="p">(</span>p<span class="p">[</span>pos<span class="p">])</span> <span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>pos <span class="o">&lt;-</span> p <span class="o">&gt;</span> <span class="m">0</span>
+H <span class="o">&lt;-</span> <span class="o">-</span> <span class="kp">sum</span><span class="p">(</span> p<span class="p">[</span>pos<span class="p">]</span> <span class="o">*</span> <span class="kp">log</span><span class="p">(</span>p<span class="p">[</span>pos<span class="p">])</span> <span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12292,6 +12305,7 @@ pos <span class="o">&lt;-</span> p <span class="o">&gt;</span> <span class="m">0
 <li>sometimes the cost in human-time of complicated vectorization isn’t worth the saved CPU cycles</li>
 </ul>
 <p>See the third and fourth Circles in <em>The R Inferno</em>, Patrick Burns</p>
+<p>"Premature optimization is the root of all evil" -Donald Knuth</p>
 
 </div>
 </div>
@@ -12301,8 +12315,8 @@ pos <span class="o">&lt;-</span> p <span class="o">&gt;</span> <span class="m">0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Vectorization-via-ifelse()">Vectorization via <code>ifelse()</code><a class="anchor-link" href="#Vectorization-via-ifelse()">&#182;</a></h2><p><code>ifelse()</code> has syntax:</p>
-<div class="highlight"><pre><span></span>iselse<span class="p">(</span>bool_vec<span class="p">,</span> true_vec<span class="p">,</span> false_vec<span class="p">)</span>
+<h3 id="Vectorization-via-ifelse()">Vectorization via <code>ifelse()</code><a class="anchor-link" href="#Vectorization-via-ifelse()">&#182;</a></h3><p><code>ifelse()</code> has syntax:</p>
+<div class="highlight"><pre><span></span><span class="kp">ifelse</span><span class="p">(</span>bool_vec<span class="p">,</span> true_vec<span class="p">,</span> false_vec<span class="p">)</span>
 </pre></div>
 <p>Returns a vector of length equal to bool_vec whose</p>
 <ul>
@@ -12350,15 +12364,27 @@ pos <span class="o">&lt;-</span> p <span class="o">&gt;</span> <span class="m">0
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>x <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">6</span><span class="o">:</span><span class="m">-4</span><span class="p">)</span>
-<span class="kp">sqrt</span><span class="p">(</span>x<span class="p">)</span> <span class="c1">#- gives warning</span>
-<span class="kp">sqrt</span><span class="p">(</span><span class="kp">ifelse</span><span class="p">(</span>x <span class="o">&gt;=</span> <span class="m">0</span><span class="p">,</span> x<span class="p">,</span> <span class="kc">NA</span><span class="p">))</span> <span class="c1"># no warning</span>
+<span class="kp">sqrt</span><span class="p">(</span>x<span class="p">)</span> <span class="c1"># gives warning</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">sqrt</span><span class="p">(</span><span class="kp">ifelse</span><span class="p">(</span>x <span class="o">&gt;=</span> <span class="m">0</span><span class="p">,</span> x<span class="p">,</span> <span class="kc">NA</span><span class="p">))</span> <span class="c1"># no warning</span>
 </pre></div>
 
 </div>
@@ -12395,7 +12421,7 @@ pos <span class="o">&lt;-</span> p <span class="o">&gt;</span> <span class="m">0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="While-loops">While loops<a class="anchor-link" href="#While-loops">&#182;</a></h2><div class="highlight"><pre><span></span><span class="kr">while</span><span class="p">(</span> condition <span class="p">)</span> <span class="p">{</span>
+<h3 id="While-loops">While loops<a class="anchor-link" href="#While-loops">&#182;</a></h3><div class="highlight"><pre><span></span><span class="kr">while</span><span class="p">(</span> condition <span class="p">)</span> <span class="p">{</span>
    stuff <span class="c1"># Repeat while condition evaluates to TRUE</span>
  <span class="p">}</span>
 </pre></div>
@@ -12518,9 +12544,11 @@ pos <span class="o">&lt;-</span> p <span class="o">&gt;</span> <span class="m">0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-*apply-family">The <code>*apply</code> family<a class="anchor-link" href="#The-*apply-family">&#182;</a></h2><p>Useful functions for repeated operations on vectors, lists etc.</p>
-<p>Note (Circle 4 of <em>The R inferno</em>):
-• These are not vectorized operations but are loop-hiding
-• Cleaner code, but comparable speeds to explicit for loops</p>
+<p>Note (Circle 4 of <em>The R inferno</em>):</p>
+<ul>
+<li>These are not vectorized operations but are loop-hiding</li>
+<li>Cleaner code, but comparable speeds to explicit loops</li>
+</ul>
 <div class="highlight"><pre><span></span><span class="c1"># Calc. mean of each element of my_list</span>
 rslt_list <span class="o">&lt;-</span> <span class="kp">lapply</span><span class="p">(</span>my_list<span class="p">,</span> FUN <span class="o">=</span> <span class="kp">mean</span><span class="p">)</span>
 </pre></div>
