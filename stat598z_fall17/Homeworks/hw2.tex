@@ -1,0 +1,84 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\input{./base_style.sty}
+ 
+       \hypersetup{
+         colorlinks,
+         urlcolor = red,
+%         citecolor=green,
+         linkcolor=black
+       }
+
+
+
+\def\cM{\mathcal{M}}
+\def\cMI{\mathcal{S}}
+\title{Stats 598z: Homework 2}
+\author{HW2 due before midnight on Feb 5}
+%.\\ All plots should have labelled axes and titles.\\
+%}
+\date{}
+\begin{document}
+\maketitle
+\textbf{Important:\\~\\
+  \R\ code, tables and figures should be part of a single .pdf or .html files from {\tt R Markdown} and {\tt knitr}. 
+See the class reading lists for a short tutorial.\\~\\
+If you collaborated with anyone else, mention their names and the nature of the collaboration}
+
+\section{Problem 1: Rejection sampling from a truncated Gaussian \hfill[55pts]}
+
+The {\tt rnorm()} function samples from a Gaussian distribution.
+\begin{enumerate}
+  \item Draw $10000$ samples from a Gaussian with mean 1 and standard deviation 2. Plot the histogram using {\tt hist()} \hfill [5pts]
+\end{enumerate}
+  {We now want to sample from a \emph{truncated Gaussian}: a distribution that has zero probability outside some interval
+  {\tt (lower, upper)}, and is like the Gaussian within that interval. A simple way to do this is by \emph{rejection sampling}:
+    keep sampling from a Gaussian distribution until you get a sample in {\tt (lower, upper)}, and return that sample.
+    You can do this with a {\tt while} loop. To get more than one sample, enclose the {\tt while} loop in a {\tt for} loop.}
+\begin{enumerate}[resume]
+  \item Write a function {\tt trunc\_norm()} to do this. This should accept five inputs: the mean and standard deviation of
+    the Gaussian, the lower and upper truncation limits and the number of samples from the truncated Gaussian (call the last {\tt num\_samp}).
+    Use appropriate defaults for
+    the arguments ({\tt lower} and {\tt upper} should default to {\tt -Inf} and {\tt Inf}). \hfill [15pts]
+  \item Plot the histogram of
+    10000 samples from a Gaussian with mean 1, standard deviation 2, truncated to $(0,5)$. \hfill [5pts]
+  \item All the looping in the previous function can be quite inefficient, and we will try to introduce some vectorization.
+    Instead of generating one sample at a time from {\tt rnorm()}, draw {\tt num\_samp} samples.
+    If all these samples lie in {\tt (lower, upper)}, return them and we're done. If not, keep the samples that \emph{do} lie
+    in the interval, and discard the rest. Keep repeating this process until you have accumulated {\tt num\_sampl} samples.
+    Note, that this only needs a while loop which iterates a much smaller number of times. Call the overall function
+    {\tt trunc\_norm\_vec()}\hfill [15pts]
+  \item Plot the histogram of
+    10000 samples from a Gaussian with mean 1, standard deviation 2, truncated to $(0,5)$. It should be nearly identical
+    to the previous one. \hfill [5pts]
+  \item Use {\tt system.time()} to compare the efficiency of both functions. Use more samples if you must. \hfill[10pts]
+\end{enumerate}
+
+\newpage
+
+\section{Problem 2: Calculating entropy\hfill  [55pts]} 
+  We saw how to calculate the entropy of a probability distribution in class. We will now do this for $10000$ probability
+  distributions (each of which are $6$-dimensional, so you can think of them as $10000$ different loaded dice). 
+  For efficiency, we want our code to be vectorized.
+  Recall for any distribution the entropy is $-\sum_{i=1}^6 p \log(p)$. 
+\begin{enumerate}
+  \item We will first generate the $10000$ probabilities and store them in a $10000 \times 6$ matrix. We do this in three
+    steps:
+    \begin{enumerate}
+      \item Sample $60000$ variables from a Gaussian with mean $1$ and standard deviation $1$ and store them in a $10000 \times 6$
+        matrix. \hfill[5pts]
+      \item Set all elements that are negative to $0$. \hfill[5pts]
+      \item Rescale the rows of the matrix so that they add up to $1$ (as in homework 1). \hfill[5pts]
+    \end{enumerate}
+    The result is $10000$ probability distributions (that are nonnegative and add up to 1).
+  \item Directly applying the formula for entropy will give you {\tt NaN}'s, since some components are $0$. One approach to
+    fix this is to loop through each row, and use the method described in class. This is inefficient. Instead write down
+    vectorized code that does this without any {\tt for} loops. (Hint: you can try subsetting but you might run into trouble
+    if you're not careful: it's probably simplest to use {\tt ifelse()}). Your code should  produce no warnings.  \hfill[20pts]
+  \item Plot a histogram of the resulting $10000$ calculated entropies. \hfill[4pts]
+  \item What is the largest entropy you observe? What is the corresponding probability vector? \hfill[4pts]
+  \item Make a guess about the probability distribution that has the theoretical maximum entropy.  \hfill[2pts]
+\end{enumerate}
+\end{document}
