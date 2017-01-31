@@ -11830,7 +11830,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Lecture-6:-Functions-in-R">Lecture 6: Functions in R<a class="anchor-link" href="#Lecture-6:-Functions-in-R">&#182;</a></h2><h3 id="STAT598z:-Intro.-to-computing-for-statistics">STAT598z: Intro. to computing for statistics<a class="anchor-link" href="#STAT598z:-Intro.-to-computing-for-statistics">&#182;</a></h3><hr>
+<h2 id="Lecture-6-and-7:-Functions-in-R">Lecture 6 and 7: Functions in R<a class="anchor-link" href="#Lecture-6-and-7:-Functions-in-R">&#182;</a></h2><h3 id="STAT598z:-Intro.-to-computing-for-statistics">STAT598z: Intro. to computing for statistics<a class="anchor-link" href="#STAT598z:-Intro.-to-computing-for-statistics">&#182;</a></h3><hr>
 <h3 id="Vinayak-Rao">Vinayak Rao<a class="anchor-link" href="#Vinayak-Rao">&#182;</a></h3><h4 id="Department-of-Statistics,-Purdue-University">Department of Statistics, Purdue University<a class="anchor-link" href="#Department-of-Statistics,-Purdue-University">&#182;</a></h4>
 </div>
 </div>
@@ -11918,26 +11918,13 @@ e.g. <a href="http://adv-r.had.co.nz/Vocabulary.html">http://adv-r.had.co.nz/Voc
 </div>
 </div>
 
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>mtrx <span class="o">&lt;-</span> <span class="kt">matrix</span><span class="p">(</span>runif<span class="p">(</span><span class="m">9</span><span class="p">),</span> nrow<span class="o">=</span><span class="m">3</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>n_mtrx <span class="o">&lt;-</span> normalize_mtrx<span class="p">(</span>ip_mat <span class="o">=</span> mtrx<span class="p">,</span> row <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>mtrx <span class="o">&lt;-</span> <span class="kt">matrix</span><span class="p">(</span>runif<span class="p">(</span><span class="m">9</span><span class="p">),</span> nrow<span class="o">=</span><span class="m">3</span><span class="p">);</span> mtrx
 </pre></div>
 
 </div>
@@ -11950,7 +11937,20 @@ e.g. <a href="http://adv-r.had.co.nz/Vocabulary.html">http://adv-r.had.co.nz/Voc
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>n_mtrx <span class="o">&lt;-</span> normalize_mtrx<span class="p">(</span>mtrx<span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>n_mtrx <span class="o">&lt;-</span> normalize_mtrx<span class="p">(</span>row <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> ip_mat <span class="o">=</span> mtrx<span class="p">);</span> n_mtrx
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>n_mtrx <span class="o">&lt;-</span> normalize_mtrx<span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> mtrx<span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12060,16 +12060,16 @@ e.g. <a href="http://adv-r.had.co.nz/Vocabulary.html">http://adv-r.had.co.nz/Voc
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>normalize_mtrx <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span> ip_mat<span class="p">,</span> row <span class="o">=</span> <span class="kc">TRUE</span> <span class="p">)</span> <span class="p">{</span>
-<span class="c1"># Normalizes columns to add up to one if row = FALSE</span>
-<span class="c1"># If row = TRUE or row not specified, normalizes columns</span>
-<span class="kr">if</span><span class="p">(</span><span class="o">!</span><span class="kp">is.matrix</span><span class="p">(</span>ip_mat<span class="p">))</span> <span class="p">{</span>
-<span class="kp">warning</span><span class="p">(</span><span class="s">&quot;Expecting a matrix as input&quot;</span><span class="p">);</span>
-<span class="kr">return</span><span class="p">(</span><span class="kc">NULL</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="c1"># You can define objects inside a function</span>
-<span class="c1"># You can even define other functions</span>
-rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</span><span class="kp">row</span><span class="p">)</span> ip_mat <span class="o">/</span> <span class="kp">rowSums</span><span class="p">(</span>ip_mat<span class="p">)</span> <span class="kp">else</span>
-<span class="kp">t</span><span class="p">(</span> <span class="kp">t</span><span class="p">(</span>ip_mat<span class="p">)</span> <span class="o">/</span> <span class="kp">colSums</span><span class="p">(</span>ip_mat<span class="p">))</span>
+  <span class="c1"># Normalizes columns to add up to one if row = FALSE</span>
+  <span class="c1"># If row = TRUE or row not specified, normalizes columns</span>
+  <span class="kr">if</span><span class="p">(</span><span class="o">!</span><span class="kp">is.matrix</span><span class="p">(</span>ip_mat<span class="p">))</span> <span class="p">{</span>
+    <span class="kp">warning</span><span class="p">(</span><span class="s">&quot;Expecting a matrix as input&quot;</span><span class="p">);</span>
+    <span class="kr">return</span><span class="p">(</span><span class="kc">NULL</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="c1"># You can define objects inside a function</span>
+  <span class="c1"># You can even define other functions</span>
+  rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</span><span class="kp">row</span><span class="p">)</span> ip_mat <span class="o">/</span> <span class="kp">rowSums</span><span class="p">(</span>ip_mat<span class="p">)</span> <span class="kp">else</span>
+            <span class="kp">t</span><span class="p">(</span> <span class="kp">t</span><span class="p">(</span>ip_mat<span class="p">)</span> <span class="o">/</span> <span class="kp">colSums</span><span class="p">(</span>ip_mat<span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -12096,7 +12096,7 @@ rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</s
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>
+<div class=" highlight hl-r"><pre><span></span>abc <span class="o">&lt;-</span> <span class="m">2</span><span class="p">;</span> xyz <span class="o">&lt;-</span> <span class="m">3</span><span class="p">;</span> my_add<span class="p">(</span>abc<span class="p">,</span>xyz<span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12109,7 +12109,7 @@ rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</s
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>my_add <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">,</span>y<span class="p">)</span> x<span class="o">+</span>y
+<div class=" highlight hl-r"><pre><span></span>my_add <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">,</span>y<span class="p">)</span> <span class="p">{</span><span class="kr">return</span><span class="p">(</span>x<span class="o">+</span>y<span class="p">)}</span>
 </pre></div>
 
 </div>
@@ -12221,7 +12221,7 @@ rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</s
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Example: Recursive addition like in functional programming</p>
+<p>Example: Recursive addition via functional programming</p>
 
 </div>
 </div>
@@ -12239,7 +12239,7 @@ rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</s
 </div>
 </div>
 
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -12262,7 +12262,7 @@ rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</s
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12408,20 +12408,7 @@ rslt <span class="o">&lt;-</span> <span class="kr">if</span><span class="p">(</s
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>func1<span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>local_env <span class="o">&lt;-</span> func1<span class="p">()</span>
+<div class=" highlight hl-r"><pre><span></span><span class="p">(</span>local_env <span class="o">&lt;-</span> func1<span class="p">())</span>
 </pre></div>
 
 </div>
@@ -12516,9 +12503,21 @@ determines which variables to use</p>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>x <span class="o">&lt;-</span> <span class="m">5</span><span class="p">;</span> y <span class="o">&lt;-</span> <span class="m">6</span>
+<div class=" highlight hl-r"><pre><span></span>x <span class="o">&lt;-</span> <span class="m">5</span> 
 func1 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>x <span class="o">+</span> <span class="m">1</span><span class="p">}</span>
-func1<span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>func1<span class="p">(</span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12531,24 +12530,61 @@ func1<span class="p">(</span><span class="m">1</span><span class="p">)</span>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>func2 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>x <span class="o">+</span> <span class="m">1</span><span class="p">}</span>
-func2<span class="p">()</span>
-x <span class="o">&lt;-</span> <span class="m">10</span><span class="p">;</span> func2<span class="p">()</span> <span class="c1"># use new x or x at the time of definition?</span>
+<div class=" highlight hl-r"><pre><span></span>x <span class="o">&lt;-</span> <span class="m">5</span><span class="p">;</span> func2 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>x <span class="o">+</span> <span class="m">1</span><span class="p">}</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div></section><section>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>func3 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>x <span class="o">&lt;-</span> x <span class="o">+</span> <span class="m">1</span><span class="p">;</span> y <span class="o">&lt;&lt;-</span> y <span class="o">+</span> <span class="m">1</span><span class="p">;</span> <span class="kp">environment</span><span class="p">()}</span>
+<div class=" highlight hl-r"><pre><span></span>func2<span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>x <span class="o">&lt;-</span> <span class="m">10</span><span class="p">;</span> func2<span class="p">()</span> <span class="c1"># use new x or x at the time of definition?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>x <span class="o">&lt;-</span> <span class="m">1</span><span class="p">;</span> y <span class="o">&lt;-</span> <span class="m">10</span>
+func3 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>x <span class="o">&lt;-</span> x <span class="o">+</span> <span class="m">1</span><span class="p">;</span> y <span class="o">&lt;&lt;-</span> y <span class="o">+</span> <span class="m">1</span><span class="p">;</span> <span class="kp">environment</span><span class="p">()}</span>
 env <span class="o">&lt;-</span> func3<span class="p">()</span>
-<span class="kt">c</span><span class="p">(</span>x<span class="p">,</span> y<span class="p">,</span> env<span class="o">$</span>x<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kt">c</span><span class="p">(</span>x<span class="p">,</span> y<span class="p">,</span> env<span class="o">$</span>x<span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12561,8 +12597,21 @@ env <span class="o">&lt;-</span> func3<span class="p">()</span>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>func4 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>func1<span class="p">(</span>x<span class="p">)}</span>
-func4<span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>func1 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>x <span class="o">+</span> <span class="m">1</span><span class="p">}</span>
+func4 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>func1<span class="p">(</span>x<span class="p">)}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>func4<span class="p">(</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12575,8 +12624,21 @@ func4<span class="p">(</span><span class="m">2</span><span class="p">)</span>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>func5 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>func2<span class="p">()}</span>
-func5<span class="p">(</span><span class="m">2</span><span class="p">)</span> <span class="c1"># func2 uses x from calling or global environment?</span>
+<div class=" highlight hl-r"><pre><span></span>x <span class="o">&lt;-</span> <span class="m">5</span><span class="p">;</span> func2 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>x <span class="o">+</span> <span class="m">1</span><span class="p">}</span>
+func5 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>func2<span class="p">()}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>func5<span class="p">(</span><span class="m">2</span><span class="p">)</span> <span class="c1"># func2 uses x from calling or global environment?</span>
 </pre></div>
 
 </div>
@@ -12589,30 +12651,28 @@ func5<span class="p">(</span><span class="m">2</span><span class="p">)</span> <s
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Scoping-in-R">Scoping in R<a class="anchor-link" href="#Scoping-in-R">&#182;</a></h2><p>For more on scoping, see (Advanced R, Hadley Wickham)
-The bottomline</p>
+<h2 id="Scoping-in-R">Scoping in R<a class="anchor-link" href="#Scoping-in-R">&#182;</a></h2><p>For more on scoping, see (Advanced R, Hadley Wickham)</p>
+<p>The bottomline</p>
 <ul>
 <li>Avoid using global variables</li>
 <li>Always define and use clear interfaces to functions</li>
-<li>Warning: you are always implicitly using global objects in R</li>
+<li><em>Warning</em>: we're always implicitly using global objects in R</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>’<span class="o">+</span>’ <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">,</span>y<span class="p">)</span> x<span class="o">*</span>y <span class="c1"># Open a new RStudio session!</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span>’<span class="o">+</span>’ <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">,</span>y<span class="p">)</span> x<span class="o">*</span>y <span class="c1">#Open new RStudio session!</span>
 <span class="m">2</span> <span class="o">+</span> <span class="m">10</span>
 </pre></div>
 
 </div>
 </div>
-</div>
-
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12643,7 +12703,7 @@ The bottomline</p>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>func<span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="p">{</span><span class="kp">print</span><span class="p">(</span>”Hello”<span class="p">);</span> <span class="m">5</span><span class="p">})</span>
+<div class=" highlight hl-r"><pre><span></span>func<span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="p">{</span><span class="kp">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span> <span class="m">5</span><span class="p">})</span>
 </pre></div>
 
 </div>
@@ -12663,6 +12723,198 @@ The bottomline</p>
 </div>
 </div>
 
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Some-comments-on-the-homework">Some comments on the homework<a class="anchor-link" href="#Some-comments-on-the-homework">&#182;</a></h3><p>functions: modular blocks of code that map input arguments
+to output (and sometimes have side-effects e.g. plotting)</p>
+<p>Should not use global variables!</p>
+<ul>
+<li>Except in very special situations, this is just laziness</li>
+<li>Will eventually cause you trouble (and cost you points)</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Functions should produce same output for same input,
+irrespective of values of non-input variables</p>
+<p>Some exceptions are functions</p>
+<ul>
+<li>that are random (but see <code>set.seed()</code>)</li>
+<li>that read files, accept user input</li>
+<li>that read date/time/local system information</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span>my_func <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>mf_arg1<span class="p">,</span> mf_arg2<span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># Stuff not involving information other than</span>
+  <span class="c1"># mf_arg&#39;s</span>
+<span class="p">}</span>
+</pre></div>
+<ul>
+<li>Give your function an informative name</li>
+<li>Needn’t prefix all local variables, but helps against typos</li>
+<li>Arguments are placeholders for actual supplied inputs</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you’re going to change R datasets, make local copies</p>
+<p>Bad:</p>
+<div class="highlight"><pre><span></span>USArrests<span class="p">[</span><span class="s">&#39;Indiana&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> USArrests<span class="p">[</span><span class="s">&#39;Indiana&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="m">1</span>
+<span class="c1"># What happens next time you run your script?</span>
+<span class="c1"># What if you want the original value?</span>
+</pre></div>
+<p>Good:</p>
+<div class="highlight"><pre><span></span>my_USArrests <span class="o">&lt;-</span> USArrests
+my_USArrests<span class="p">[</span><span class="s">&#39;Indiana&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> USArrests<span class="p">[</span><span class="s">&#39;Indiana&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="m">1</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Bad</strong>: Hacking away at the console and later trying to
+reconstruct how you got your output</p>
+<p><strong>Good</strong>: Work with a text file in the editor</p>
+<ul>
+<li>This allows you to see the structure of your program</li>
+<li>Encourages use of functions</li>
+<li>Encourages comments</li>
+<li>Maybe start by thinking of your plan of attack, write down a skeleton of your program and then fill it in?</li>
+<li>Bad idea to dive into details without a broader plan</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Use the console to explore outcome of one line, check
+help/syntax, but once successful, add line to editor</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="RStudio-shortcuts">RStudio shortcuts<a class="anchor-link" href="#RStudio-shortcuts">&#182;</a></h3><p>While working at the editor, <code>&lt;Ctrl&gt;&lt;Enter&gt;</code></p>
+<ul>
+<li>executes selected lines</li>
+<li>executes current line if none are selected</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>&lt;Ctrl&gt;&lt;Shift&gt;&lt;Enter&gt;</code>:  executes all lines</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>&lt;Ctrl&gt;&lt;1&gt; and &lt;Ctrl&gt;&lt;2&gt;</code>: Move cursor to editor or console</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Also <code>&lt;Tab&gt;</code> autocompletes, <code>&lt;Up&gt;</code> moves through command
+history, and <code>&lt;Ctrl&gt;&lt;Up&gt;</code> autocompletes from command history</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For more:</p>
+<ul>
+<li><code>&lt;ALT&gt;&lt;SHIFT&gt;&lt;k&gt;</code> (Tools&gt;Keyboard Shortcuts Help)</li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts</a></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ideally, instead of submitting a script, wrap it up in a function
+Assigning variables won’t mangle someone else’s namespace</p>
+<div class="highlight"><pre><span></span><span class="c1"># Homework 1A</span>
+Lots of variable assignments
+result <span class="o">&lt;-</span> <span class="kc">...</span>
+</pre></div>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Better:</p>
+<div class="highlight"><pre><span></span>homework_1a <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>ip_data<span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># Helpful comment</span>
+  Lots of variable assignments
+  result <span class="o">&lt;-</span> <span class="kc">...</span>
+<span class="p">}</span>
+homework_1a<span class="p">(</span>USArrests<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
 </div></div></section></section>
 </div>
 </div>
