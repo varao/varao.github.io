@@ -12370,7 +12370,7 @@ E.g.</p>
 <h2 id="Nonparametric-methods">Nonparametric methods<a class="anchor-link" href="#Nonparametric-methods">&#182;</a></h2><p>No longer limit yourself to a parametric family of functions</p>
 <p>Much more flexible</p>
 <p>Often much better prediction</p>
-<p>Complexity of f can grow with size of dataset</p>
+<p>Complexity of $f$ can grow with size of dataset</p>
 <p>Often hard to interpret</p>
 
 </div>
@@ -12471,7 +12471,8 @@ Predicted $y^∗$ is the majority class-label of the neighbors</li>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>10-nearest neighbors</p>
-<p><img src="./figures/ht_2_15.png" alt="Alt text"></p>
+<p><img src="./figures/ht_2_15.png" alt="Alt text">
+&lt;font size=5&gt; (<em>An Introduction to Statistical Learning</em>, James, Witten, Hastie and Tibshirani) &lt;/font&gt;</p>
 
 </div>
 </div>
@@ -12481,7 +12482,8 @@ Predicted $y^∗$ is the majority class-label of the neighbors</li>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="./figures/ht_2_16.png" alt="Alt text"></p>
+<p><img src="./figures/ht_2_16.png" alt="Alt text">
+&lt;font size=5&gt; (<em>An Introduction to Statistical Learning</em>, James, Witten, Hastie and Tibshirani) &lt;/font&gt;</p>
 
 </div>
 </div>
@@ -12596,6 +12598,75 @@ Create an unseen test dataset.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Choosing-k-by-cross-validation">Choosing k by cross-validation<a class="anchor-link" href="#Choosing-k-by-cross-validation">&#182;</a></h3><p><img src="./figures/ht_2_17.png" alt="Alt text"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Often 50-50 or 70-30 training-test splits are used</p>
+<p>Too small a test set:</p>
+<ul>
+<li>Noisy estimates of generalization error</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Too small a training set:</p>
+<ul>
+<li>Wasting training data</li>
+<li>Model selected using small training set may be simpler that model relevant to the entire training set</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="k-fold-crossvalidation">k-fold crossvalidation<a class="anchor-link" href="#k-fold-crossvalidation">&#182;</a></h3><p>Split your data into k-blocks.</p>
+<p>For i = 1 to k:</p>
+<ul>
+<li>Fit algorithm on all except block i.</li>
+<li>Test algorithm on block i.
+Overall generalization error is the average of all errors.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Can use larger training sets</li>
+<li>Can get confidence intervals on generalization error.</li>
+</ul>
+<p>k = N: leave-one-out cross-validation</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="k-fold-crossvalidation">k-fold crossvalidation<a class="anchor-link" href="#k-fold-crossvalidation">&#182;</a></h3><p><img src="./figures/kfoldcv.png" alt="Alt text">
+&lt;font size=5&gt; (<em>An Introduction to Statistical Learning</em>, James, Witten, Hastie and Tibshirani) &lt;/font&gt;</p>
 
 </div>
 </div>
