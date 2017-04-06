@@ -11842,12 +11842,8 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>ggvis</code> is a simple way to get interactive plots</p>
 <ul>
-<li>provides a simpler interfact to shiny</li>
+<li>provides a simpler interface to shiny</li>
 <li>is still experimental</li>
-</ul>
-<p>Some aesthetics also have different names:</p>
-<ul>
-<li><code>color</code> becomes <code>stroke</code></li>
 </ul>
 
 </div>
@@ -11864,7 +11860,11 @@ a.anchor-link {
 <li>add layes using <code>%&gt;%</code> instead of <code>+</code></li>
 <li>instead of <code>aes(color=group)</code>, write <code>color = ~group</code></li>
 <li>we still write <code>color=clr_val</code></li>
-<li>aesthetics have different names, e.g. <code>color</code> becomes <code>stroke</code></li>
+<li>aesthetics have different names: <ul>
+<li><code>color</code> becomes <code>stroke</code></li>
+<li><code>alpha</code> becomes <code>opacity</code></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -11872,12 +11872,13 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="kn">library</span><span class="p">(</span><span class="s">&#39;tidyverse&#39;</span><span class="p">)</span>
 <span class="kn">library</span><span class="p">(</span><span class="s">&#39;ggvis&#39;</span><span class="p">)</span>
 <span class="kp">load</span><span class="p">(</span><span class="s">&#39;~/RSRCH/DATA/EconData/data/HomeValues.RData&#39;</span><span class="p">)</span>
+HomeValues<span class="o">$</span>qtr <span class="o">&lt;-</span> <span class="kp">as.double</span><span class="p">(</span>HomeValues<span class="o">$</span>qtr<span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11887,10 +11888,10 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>plt <span class="o">&lt;-</span>ggvis<span class="p">(</span>HomeValues<span class="p">,</span>x<span class="o">=~</span>qtr<span class="p">,</span>y<span class="o">=~</span>Home.Value<span class="p">,</span>stroke<span class="o">=~</span>State<span class="p">)</span> <span class="o">%&gt;%</span> 
+<div class=" highlight hl-r"><pre><span></span>plt<span class="o">&lt;-</span> ggvis<span class="p">(</span>HomeValues<span class="p">,</span>x<span class="o">=~</span>qtr<span class="p">,</span>y<span class="o">=~</span>Home.Value<span class="p">,</span>stroke<span class="o">=~</span>State<span class="p">)</span> <span class="o">%&gt;%</span> 
         layer_lines<span class="p">()</span>
 </pre></div>
 
@@ -11901,7 +11902,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>plt <span class="o">&lt;-</span> plt <span class="o">%&gt;%</span> hide_legend<span class="p">(</span><span class="s">&#39;stroke&#39;</span><span class="p">)</span>
@@ -11914,7 +11915,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>plt <span class="o">%&gt;%</span>  layer_points<span class="p">()</span>
@@ -11924,42 +11925,16 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
-
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>plt <span class="o">%&gt;%</span>  layer_points<span class="p">(</span>size<span class="o">=</span><span class="m">1</span><span class="p">,</span> fillOpacity<span class="o">=</span><span class="m">.1</span><span class="p">)</span> <span class="c1"># Bug!</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
-
-</div>
-
 </div>
 </div>
 
@@ -11970,40 +11945,37 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>ggvis</code> uses both <code>=</code> and <code>:=</code> for assignments</p>
-<p>Use <code>:=</code> when we expect a variable rather than a constant</p>
+<p>Use <code>=</code> to map a variable to a property</p>
 <ul>
-<li>Use ':=' for quantities like size, color  etc</li>
-<li>Use '=' for  for quantities like <code>binwidth</code>, <code>opacity</code> etc</li>
+<li>Then use <code>~</code> to refer to a column of a dataframe</li>
 </ul>
+<p>Use <code>:=</code> when we set a property based on a <em>value</em></p>
 
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>plt <span class="o">%&gt;%</span>  layer_points<span class="p">(</span>size<span class="o">:=</span><span class="m">1</span><span class="p">,</span> fillOpacity<span class="o">=</span><span class="m">.1</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>plt <span class="o">%&gt;%</span>  layer_points<span class="p">(</span>size<span class="o">:=</span><span class="m">1</span><span class="p">,</span> fillOpacity<span class="o">:=</span><span class="m">.1</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
-
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the end, set properties using <code>=~ column</code> or <code>:= value</code></p>
 
 </div>
 </div>
-
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12020,26 +11992,29 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>plt  <span class="o">%&gt;%</span>  add_tooltip<span class="p">(</span><span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span><span class="kp">paste</span><span class="p">(</span>x<span class="o">$</span>State<span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p">,</span>x<span class="o">$</span>Home.Value<span class="p">)},</span><span class="s">&#39;hover&#39;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>plt <span class="o">%&gt;%</span> layer_points<span class="p">(</span>size<span class="o">:=</span>input_slider<span class="p">(</span><span class="m">.1</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> 
+                     fill <span class="o">=~</span> State<span class="p">,</span> fillOpacity<span class="o">:=</span><span class="m">.5</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+         hide_legend<span class="p">(</span><span class="s">&#39;fill&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>plt  <span class="o">%&gt;%</span>  add_tooltip<span class="p">(</span><span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> 
+           <span class="p">{</span><span class="kp">paste</span><span class="p">(</span>x<span class="o">$</span>State<span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p">,</span>x<span class="o">$</span>Home.Value<span class="p">)},</span><span class="s">&#39;hover&#39;</span><span class="p">)</span>
+</pre></div>
 
 </div>
-
 </div>
 </div>
 
@@ -12049,19 +12024,33 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note: an <em>anonymous function</em> to print
-State and Value</p>
+<p><code>add_tooltip</code> needs a function to read value and return a string</p>
+<ul>
+<li>we used an <em>anonymous function</em> to print <code>State</code>,<code>Value</code></li>
+</ul>
 
 </div>
 </div>
-</div></div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For lines, <code>add_tooltip</code> only prints first value (<a href="http://stackoverflow.com/questions/28540504/mouse-hover-in-layer-lines-ggvis-r">http://stackoverflow.com/questions/28540504/mouse-hover-in-layer-lines-ggvis-r</a>)</p>
+<ul>
+<li>add <code>layer_points()</code> for all values</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>plt <span class="o">&lt;-</span>ggvis<span class="p">(</span>HomeValues<span class="p">,</span>x<span class="o">=~</span>qtr<span class="p">,</span>y<span class="o">=~</span>Home.Value<span class="p">,</span>stroke<span class="o">=~</span>State<span class="p">)</span> <span class="o">%&gt;%</span> 
-     layer_lines<span class="p">()</span> <span class="o">%&gt;%</span> layer_points<span class="p">(</span>size<span class="o">:=</span>input_slider<span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">5</span><span class="p">))</span><span class="o">%&gt;%</span> 
+<div class=" highlight hl-r"><pre><span></span>plt  <span class="o">%&gt;%</span> layer_points<span class="p">(</span>size<span class="o">:=</span>input_slider<span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">5</span><span class="p">))</span><span class="o">%&gt;%</span> 
         hide_legend<span class="p">(</span><span class="s">&#39;stroke&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -12083,10 +12072,10 @@ State and Value</p>
 </div>
 </div>
 
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>plt <span class="o">&lt;-</span>ggvis<span class="p">(</span>HomeValues x<span class="o">=~</span>qtr<span class="p">,</span>y<span class="o">=~</span>Home.Value<span class="p">,</span>stroke<span class="o">=~</span>State<span class="p">)</span> <span class="o">%&gt;%</span> 
@@ -12095,60 +12084,6 @@ State and Value</p>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-Error in eval(expr, envir, enclos): object &#39;State&#39; not found
-Traceback:
-
-1. ggvis(HomeValues, x = ~qtr, y = ~Home.Value, stroke = ~State) %&gt;% 
- .     layer_smooths(`:=`(span, input_slider(0, 5))) %&gt;% hide_legend(&#34;stroke&#34;)
-2. withVisible(eval(quote(`_fseq`(`_lhs`)), env, env))
-3. eval(quote(`_fseq`(`_lhs`)), env, env)
-4. eval(expr, envir, enclos)
-5. `_fseq`(`_lhs`)
-6. freduce(value, `_function_list`)
-7. function_list[[i]](value)
-8. layer_smooths(., `:=`(span, input_slider(0, 5)))
-9. layer_model_predictions(vis, ..., model = &#34;loess&#34;, formula = formula, 
- .     model_args = list(span = span), se = se)
-10. layer_f(vis, pipeline)
-11. fun(vis)
-12. emit_paths(x, props$stroke)
-13. add_mark(vis, &#34;line&#34;, props)
-14. register_scales_from_props(vis, cur_props(vis))
-15. add_scale_from_prop(vis, props[[i]])
-16. vector_type(shiny::isolate(prop_value(prop, data())))
-17. shiny::isolate(prop_value(prop, data()))
-18. ..stacktraceoff..(ctx$run(function() {
-  .     ..stacktraceon..(expr)
-  . }))
-19. ctx$run(function() {
-  .     ..stacktraceon..(expr)
-  . })
-20. withReactiveDomain(.domain, {
-  .     env &lt;- .getReactiveEnvironment()
-  .     .graphEnterContext(id)
-  .     on.exit(.graphExitContext(id), add = TRUE)
-  .     env$runWith(self, func)
-  . })
-21. env$runWith(self, func)
-22. contextFunc()
-23. ..stacktraceon..(expr)
-24. prop_value(prop, data())
-25. prop_value.prop_variable(prop, data())
-26. eval(value(x$value), envir = data, enclos = x$env)
-27. eval(expr, envir, enclos)</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -12165,11 +12100,12 @@ Traceback:
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>plt <span class="o">&lt;-</span> HomeValues <span class="o">%&gt;%</span> group_by<span class="p">(</span>State<span class="p">)</span> <span class="o">%&gt;%</span> ggvis<span class="p">(</span>x<span class="o">=~</span>qtr<span class="p">,</span>y<span class="o">=~</span>Home.Value<span class="p">,</span> stroke<span class="o">=~</span>State<span class="p">)</span> <span class="o">%&gt;%</span> 
-        layer_smooths<span class="p">(</span>span<span class="o">=</span>input_slider<span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">5</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+<div class=" highlight hl-r"><pre><span></span>plt <span class="o">&lt;-</span> HomeValues <span class="o">%&gt;%</span> group_by<span class="p">(</span>State<span class="p">)</span> <span class="o">%&gt;%</span> 
+       ggvis<span class="p">(</span>x<span class="o">=~</span>qtr<span class="p">,</span>y<span class="o">=~</span>Home.Value<span class="p">,</span> stroke<span class="o">=~</span>State<span class="p">)</span> <span class="o">%&gt;%</span> 
+        layer_smooths<span class="p">(</span>span<span class="o">=</span>input_slider<span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">2</span><span class="p">,</span>step<span class="o">=</span><span class="m">.1</span><span class="p">))</span> <span class="o">%&gt;%</span> 
         hide_legend<span class="p">(</span><span class="s">&#39;stroke&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -12189,7 +12125,7 @@ Traceback:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>ggvis<span class="p">(</span>HomeValues<span class="p">)</span> <span class="o">%&gt;%</span> layer_histograms<span class="p">(</span>x<span class="o">=~</span>Home.Value<span class="p">)</span>
@@ -12199,30 +12135,10 @@ Traceback:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Guessing width = 50000 # range / 18
-</pre>
-</div>
-</div>
-
-<div class="output_area"><div class="prompt"></div>
-
-
-
-</div>
-
-</div>
-</div>
-
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>ggvis<span class="p">(</span>HomeValues<span class="p">)</span> <span class="o">%&gt;%</span> 
@@ -12234,23 +12150,41 @@ Traceback:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>1 2 3 4 5</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>ggvis<span class="p">(</span>HomeValues<span class="p">)</span> <span class="o">%&gt;%</span> 
+  layer_histograms<span class="p">(</span>x<span class="o">=~</span>Home.Value<span class="p">,</span> fill.hover<span class="o">:=</span><span class="s">&#39;red&#39;</span><span class="p">,</span>
+                   width<span class="o">=</span>input_slider<span class="p">(</span>min<span class="o">=</span><span class="m">10</span><span class="o">^</span><span class="m">3</span><span class="p">,</span>max<span class="o">=</span><span class="m">10</span><span class="o">^</span><span class="m">5</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>plt<span class="o">&lt;-</span> ggvis<span class="p">(</span>HomeValues<span class="p">,</span>x<span class="o">=~</span>qtr<span class="p">,</span>y<span class="o">=~</span>Home.Value<span class="p">,</span>stroke<span class="o">=~</span>State<span class="p">)</span> <span class="o">%&gt;%</span> 
+        layer_lines<span class="p">(</span>stroke.hover<span class="o">:=</span><span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> hide_legend<span class="p">(</span><span class="s">&#39;stroke&#39;</span><span class="p">)</span>
+plt <span class="o">%&gt;%</span>  add_tooltip<span class="p">(</span><span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> 
+             <span class="p">{</span><span class="kp">paste</span><span class="p">(</span>x<span class="o">$</span>State<span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p">,</span>x<span class="o">$</span>Home.Value<span class="p">)},</span><span class="s">&#39;hover&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span>plt <span class="o">&lt;-</span> HomeValues <span class="o">%&gt;%</span> group_by<span class="p">(</span>State<span class="p">)</span> <span class="o">%&gt;%</span>  
@@ -12262,22 +12196,6 @@ Traceback:
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-Error in eval(expr, envir, enclos): could not find function &#34;%&gt;%&#34;
-Traceback:
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -12294,68 +12212,88 @@ Traceback:
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span>state_map <span class="o">&lt;-</span> map_data<span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">);</span>
-my_state_map <span class="o">&lt;-</span> state_map
-my_state_map<span class="o">$</span>region <span class="o">&lt;-</span> <span class="kp">tolower</span><span class="p">(</span>state_map<span class="o">$</span>region<span class="p">)</span>
-get_ab <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span>  state.abb<span class="p">[</span>x <span class="o">==</span><span class="kp">tolower</span><span class="p">(</span>state.name<span class="p">)]</span>
-    
-state.name<span class="p">[</span><span class="m">51</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;district of columbia&quot;</span>
-state.abb<span class="p">[</span><span class="m">51</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;DC&quot;</span>
-    
- my_state_map <span class="o">%&gt;%</span> 
-  ggvis<span class="p">(</span><span class="o">~</span>long<span class="p">,</span> <span class="o">~</span>lat<span class="p">,</span>fill<span class="o">=~</span>input_slider<span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">100</span><span class="p">,</span>map<span class="o">=</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>x<span class="o">/</span><span class="m">1000</span><span class="p">}))</span>  <span class="o">%&gt;%</span> 
-  group_by<span class="p">(</span>region<span class="p">)</span> <span class="o">%&gt;%</span>
-   layer_paths<span class="p">(</span>strokeOpacity <span class="o">:=</span> <span class="m">0.5</span><span class="p">,</span> 
-                                      strokeWidth <span class="o">:=</span> <span class="m">0.5</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  hide_axis<span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span> hide_axis<span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  set_options<span class="p">(</span>width<span class="o">=</span><span class="m">960</span><span class="p">,</span> height<span class="o">=</span><span class="m">600</span><span class="p">,</span> keep_aspect<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#https://r2014-mtp.sciencesconf.org/file/92631</span>
+dat <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>time<span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> value<span class="o">=</span>runif<span class="p">(</span><span class="m">10</span><span class="p">))</span>
+
+<span class="c1"># Create a reactive that returns a data frame, adding a new</span>
+<span class="c1"># row every 2 seconds</span>
+ddat <span class="o">&lt;-</span> reactive<span class="p">({</span>
+  invalidateLater<span class="p">(</span><span class="m">2000</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">)</span>
+  dat<span class="o">$</span>time <span class="o">&lt;&lt;-</span> <span class="kt">c</span><span class="p">(</span>dat<span class="o">$</span>time<span class="p">[</span><span class="m">-2</span><span class="p">],</span> dat<span class="o">$</span>time<span class="p">[</span><span class="kp">length</span><span class="p">(</span>dat<span class="o">$</span>time<span class="p">)]</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span>
+  dat<span class="o">$</span>value <span class="o">&lt;&lt;-</span> <span class="kt">c</span><span class="p">(</span>dat<span class="o">$</span>value<span class="p">[</span><span class="m">-1</span><span class="p">],</span> runif<span class="p">(</span><span class="m">1</span><span class="p">))</span>
+  dat
+<span class="p">})</span>
+
+ddat <span class="o">%&gt;%</span> ggvis<span class="p">(</span>x <span class="o">=</span> <span class="o">~</span>time<span class="p">,</span> y <span class="o">=</span> <span class="o">~</span>value<span class="p">,</span> key <span class="o">:=</span> <span class="o">~</span>time<span class="p">)</span> <span class="o">%&gt;%</span>
+  layer_points<span class="p">()</span> <span class="o">%&gt;%</span> layer_paths<span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kn">library</span><span class="p">(</span><span class="s">&#39;ggplot2&#39;</span><span class="p">);</span><span class="kn">library</span><span class="p">(</span><span class="s">&#39;maps&#39;</span><span class="p">)</span>
 
+my_state_map <span class="o">&lt;-</span> map_data<span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">);</span>
+my_state_map<span class="o">$</span>region <span class="o">&lt;-</span> <span class="kp">tolower</span><span class="p">(</span>my_state_map<span class="o">$</span>region<span class="p">)</span>
+get_ab <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span>  state.abb<span class="p">[</span>x <span class="o">==</span><span class="kp">tolower</span><span class="p">(</span>state.name<span class="p">)]</span>
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-Error in vector_type.default(shiny::isolate(prop_value(prop, data()))): Unknown variable type: yearqtr
-Traceback:
+get_house_pr <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>st<span class="p">,</span>yr<span class="p">)</span> <span class="p">{</span>
+         HomeValues<span class="p">[</span>HomeValues<span class="o">$</span>State<span class="o">==</span>st <span class="o">&amp;</span> 
+                    HomeValues<span class="o">$</span>qtr<span class="o">==</span>yr<span class="p">,</span><span class="m">2</span><span class="p">]</span> <span class="p">}</span>
 
-1. ggvis(HomeValues %&gt;% group_by(State), x = ~qtr, y = ~Home.Value) %&gt;% 
- .     filter(State %in% eval(input_select(choices = unique(as.character(HomeValues$State)), 
- .         multiple = TRUE, label = &#34;States list&#34;))) %&gt;% layer_lines(stroke = ~State, 
- .     `:=`(strokeWidth, 2))
-2. withVisible(eval(quote(`_fseq`(`_lhs`)), env, env))
-3. eval(quote(`_fseq`(`_lhs`)), env, env)
-4. eval(expr, envir, enclos)
-5. `_fseq`(`_lhs`)
-6. freduce(value, `_function_list`)
-7. withVisible(function_list[[k]](value))
-8. function_list[[k]](value)
-9. layer_lines(., stroke = ~State, `:=`(strokeWidth, 2))
-10. layer_f(vis, function(x) {
-  .     x &lt;- auto_group(x, exclude = c(&#34;x&#34;, &#34;y&#34;))
-  .     x &lt;- dplyr::arrange_(x, x_var)
-  .     emit_paths(x, props(...))
-  . })
-11. fun(vis)
-12. emit_paths(x, props(...))
-13. add_mark(vis, &#34;line&#34;, props)
-14. register_scales_from_props(vis, cur_props(vis))
-15. add_scale_from_prop(vis, props[[i]])
-16. vector_type(shiny::isolate(prop_value(prop, data())))
-17. vector_type.default(shiny::isolate(prop_value(prop, data())))
-18. stop(&#34;Unknown variable type: &#34;, paste0(class(x), collapse = &#34;/&#34;))</pre>
+state.name<span class="p">[</span><span class="m">51</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;district of columbia&quot;</span>
+state.abb<span class="p">[</span><span class="m">51</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;DC&quot;</span>
+
+my_state_map<span class="o">$</span>region <span class="o">&lt;-</span> purrr<span class="o">::</span>map_chr<span class="p">(</span>my_state_map<span class="o">$</span>region<span class="p">,</span> 
+                                      get_ab<span class="p">)</span>
+get_yr_pr <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>yr<span class="p">)</span> <span class="p">{</span>
+  pr <span class="o">&lt;-</span> my_state_map<span class="o">$</span>pr 
+  <span class="kr">for</span><span class="p">(</span>st <span class="kr">in</span> state.abb<span class="p">)</span> <span class="p">{</span>
+    psn  <span class="o">&lt;-</span> my_state_map<span class="o">$</span>region <span class="o">==</span> st
+    pr<span class="p">[</span>psn<span class="p">]</span>  <span class="o">&lt;-</span> get_house_pr<span class="p">(</span>st<span class="p">,</span><span class="kp">floor</span><span class="p">(</span>yr<span class="p">))</span>
+  <span class="p">}</span>
+  pr<span class="p">;</span> <span class="p">}</span>
+</pre></div>
+
+</div>
 </div>
 </div>
 
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>yr <span class="o">&lt;-</span> <span class="m">1976</span>
+stmp <span class="o">&lt;-</span> reactive<span class="p">({</span>invalidateLater<span class="p">(</span><span class="m">2000</span><span class="p">,</span><span class="kc">NULL</span><span class="p">)</span>
+     my_state_map<span class="o">$</span>pr <span class="o">&lt;-</span> get_yr_pr<span class="p">(</span>yr<span class="p">)</span>
+     yr <span class="o">&lt;&lt;-</span> yr <span class="o">+</span> <span class="m">4</span><span class="p">;</span> <span class="kr">if</span><span class="p">(</span>yr<span class="o">&gt;=</span><span class="m">2013</span><span class="p">)</span> yr <span class="o">&lt;&lt;-</span> <span class="m">1976</span>
+     <span class="kp">print</span><span class="p">(</span>yr<span class="p">)</span>
+     my_state_map <span class="p">})</span>
+
+stmp <span class="o">%&gt;%</span>  ggvis<span class="p">(</span><span class="o">~</span>long<span class="p">,</span> <span class="o">~</span>lat<span class="p">,</span>fill<span class="o">=~</span>pr<span class="p">)</span>  <span class="o">%&gt;%</span> 
+     group_by<span class="p">(</span>region<span class="p">)</span> <span class="o">%&gt;%</span>
+     layer_paths<span class="p">(</span>strokeOpacity <span class="o">:=</span> <span class="m">0.5</span><span class="p">,</span> 
+                strokeWidth <span class="o">:=</span> <span class="m">0.5</span><span class="p">)</span> <span class="o">%&gt;%</span>
+     hide_axis<span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span> hide_axis<span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+     set_options<span class="p">(</span>width<span class="o">=</span><span class="m">960</span><span class="p">,</span> height<span class="o">=</span><span class="m">600</span><span class="p">,</span> keep_aspect<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+                  hide_legend<span class="p">(</span><span class="s">&#39;fill&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span>  
+                  add_tooltip<span class="p">(</span><span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>
+                      <span class="kp">paste</span><span class="p">(</span>x<span class="o">$</span>region<span class="p">)},</span><span class="s">&#39;hover&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
 </div>
 </div>
 
