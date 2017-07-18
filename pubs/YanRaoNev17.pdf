@@ -1,0 +1,113 @@
+\documentclass[letterpaper]{article}
+\usepackage{proceed2e}
+\usepackage[margin=1in]{geometry}
+
+\include{Definitions}
+
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[linesnumbered, ruled, vlined, noend]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[title]{appendix}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{couriers}
+\usepackage{dsfont}
+\usepackage[shortlabels]{enumitem}
+% \usepackage{footmisc}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage[round]{natbib}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[caption=false,font=footnotesize]{subfig}
+
+\renewcommand{\appendixname}{}
+
+\graphicspath{ {Figures/} {Figures/Results/} }
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+% \setlist{nolistsep}
+
+\newcommand{\jy}[1] {\textcolor{blue}{\em #1}}
+\newcommand{\vr}[1] {\textcolor{magenta}{#1}}
+\newcommand{\jn}[2] {\textcolor{green}{\em #2}}
+
+\newcommand{\mathfont}[1] {{\fontsize{8pt}{9pt}\selectfont #1}}
+\newcommand{\displayfont}[1] {{\fontsize{8pt}{9pt}\selectfont #1}}
+\newcommand{\verysmall}[1] {{\fontsize{7pt}{8pt}\selectfont #1}}
+\newcommand{\inlinefont}[1] {{\fontsize{8.5pt}{9pt}\selectfont #1}}
+
+\renewcommand{\refname}{{\fontsize{10pt}{9pt} \textbf{References}}}
+
+% Acronyms for the proposed models
+\newcommand{\HP}{HP\xspace}    % Simple Hawkes process model
+\newcommand{\PLS}{PLS\xspace}  % Poisson latent space model
+\newcommand{\BLS}{BLS\xspace}  % Base-rate latent space model
+\newcommand{\RLS}{RLS\xspace}  % Hawkes latent space model
+\newcommand{\DLS}{DLS\xspace}  % Doubly latent space model
+
+\title{Decoupling Homophily and Reciprocity with Latent Space Network Models}
+
+\author{
+  {\bf Jiasen Yang} \\
+  Department of Statistics \\
+  Purdue University \\
+  West Lafayette, IN \\
+  \url{jiaseny@purdue.edu}
+\And
+  {\bf Vinayak Rao}  \\
+  Department of Statistics \\
+  Purdue University \\
+  West Lafayette, IN \\
+  \url{varao@purdue.edu}
+\And
+  {\bf Jennifer Neville}   \\
+  Depts.~of Computer Science and Statistics \\
+  Purdue University \\
+  West Lafayette, IN \\
+  \url{neville@purdue.edu}
+}
+
+\begin{document}
+
+\maketitle
+
+\input{0_abstract}
+
+\input{1_introduction}
+
+\input{2_1_process}
+\input{2_2_network}
+
+\input{3_problem}
+
+\input{4_embedding}
+
+% \input{4_capacity}
+
+\input{5_experiments}
+
+\input{6_related}
+
+\input{7_conclusion}
+
+\setlength{\bibsep}{2pt}
+\bibliographystyle{plainnat}
+{
+% \small
+\bibliography{paper}
+}
+
+\newpage
+
+\begin{appendices}
+\onecolumn
+\input{A_supplementary}
+\end{appendices}
+
+\end{document}
