@@ -322,3 +322,35 @@ th,td {
 hr.gold_line {
   border: 1px solid #c2972e;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 5 columns */
+  gap: 5px;
+  justify-items: center; /* center each item in its column */
+}
+
+.item {
+  text-align: center;
+}
+
+.img-box {
+  width: 120px;   /* fixed width */
+  height: 150px;  /* fixed height */
+  background-color: #333; /* optional letterbox color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* scale inside box, minimal cropping */
+}
+
+.item p {
+  margin-top: 8px;
+  font-size: 14px;
+}
