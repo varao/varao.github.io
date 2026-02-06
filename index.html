@@ -1,223 +1,108 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0; charset=UTF-8">
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
-<title>Vinayak Rao</title>
-<link href="defaultstyles.css" rel="stylesheet" media="screen" />
-<script type="text/javascript" src="branding.js"></script>
-
-<script type="text/javascript" >
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-54215214-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div id="container">
-    <div id="wrapper">
-      <div id="banner">
-        <div id="banner_left">
+    <!-- Header -->
+    <header id="header">
+        <div id="title" class="left">
           <h1> <a href="http://www.stat.purdue.edu/~varao" class="white">Vinayak Rao</a></h1>
       	  <a href="http://www.stat.purdue.edu" class="gold">Department of Statistics</a>
         </div>
-        <a href="http://www.purdue.edu"><img src="logo.png" height="90%" width="90%" alt = "Purdue logo" title="Purdue logo" id="pu_logo" /></a>
-      </div>
-      <div id="nav">
-    	<ul>
-      	<li><a href="index.html">Home</a></li>
+        <div class="right">
+        <a href="http://www.purdue.edu"><img src="logo.png" id="pu-logo" alt = "Purdue logo" title="Purdue logo"/></a>
+          </div>
+    </header>
+    
+    <!-- Links Section -->
+    <div class="links">
+        <ul>
+      	    <li><a href="index.html">Home</a></li>
             <li><a href="people.html">People</a></li>
-            <li><a href="pubs.html">Publications</a></li>
+            <li><a href="http://scholar.google.com/citations?user=IQibv4UAAAAJ&amp;hl=en">Publications</a></li>
             <li><a href="teach.html">Teaching</a></li>
-            <li><a href="misc/OnlineTeachingResources.html">OnlineTeachingResources</a></li>
-            <!--           <li><a href="CV.html">CV</a></li> -->
-
         </ul>
-      </div>
     </div>
 
-    <div id="page">
-		
-        <div id="content">
-        
-            <div id="sidebar">
-                <img src="headshot.jpg" alt = "Vinayak Photo" height = "200px" width="200px" title="Vinayak" id="fac_photo" />
-                <b> &nbsp; Associate Prof. of <a href="http://www.stat.purdue.edu">Statistics</a> 
-                
-                  &nbsp; & <a href="https://www.cs.purdue.edu/">Comp. Sci.</a> (by courtesy)</b>
-
-                <!--
-                <h3>News</h3>
-        <div id="news2" style="overflow-y:scroll; height:150px">
-          <b> 08/2020:</b> Paper accepted at JCGS  <br />
-          <b> 06/2020:</b> Paper accepted at JMLR  <br />
-          <b> 04/2020:</b> Paper accepted at JCGS  <br />
-          <b> 10/2019:</b> Paper accepted at Stat  <br />
-          <b> 1/2019:</b> Paper accepted at ICML  <br />
-          <b> 12/2018:</b> Papers accepted at AISTATS (Oral) and ICLR  <br />
-          <b> 05/2018:</b> Papers accepted at ICML and UAI  <br />
-          <b> 02/2018:</b> Paper accepted at AISTATS with Xi Tan and Jennifer Neville: "Nested CRP with Hawkes-Gaussian Processes" <br />
-          <b> 09/2017:</b> Paper accepted at NIPS with Jiangwei Pan and Boqian Zhang: "Collapsed variational inference for Markov jump processes" <br />
-          <b> 06/2017:</b> Paper accepted at UAI with Jiasen Yang and Jennifer Neville: "Decoupling Homophily and Reciprocity with Latent Space Network Models" <br />
-          <b> 04/2017:</b> New paper on arxiv with Boqian Zhang: "Efficient MCMC for parameter inference for Markov jump processes."<br />
-          <b> 06/2016:</b> "Bayesian inference for Mat&#233;rn repulsive processes accepted at JRSS-B."<br />
-          <b> 05/2016:</b> "Papers accepted at the International Conf. on Machine Learning and Uncertainty in Artificial Intelligence."<br />
-          <b> 01/2016:</b> "Data augmentation for models based on rejection sampling" accepted at Biometrika.<br />
-          <b> 01/2016</b>: "Bayesian nonparametric inference on the Stiefel manifold" is accepted at Statistica Sinica.<br />
-        </div>
-                -->
-
-                <h3>Contact</h3>
-        <div id="addr">
-        	<p>MATH 508  <br />
-                  150 N University St,
-                  Purdue Univ.  <br /> 
- 		  West Lafayette, IN 47907<br />
-  		  Phone: 765-494-3956 <br />
-  		  Fax:   765-494-0058 <br />
-                  <a href="mailto:varao@purdue.edu"><b>varao</b> (at) <b>purdue.edu</b></a><br/>
-        	      <a href="cv_vrao_latest.pdf"> cv </a>  <br/>
-        	      <a href="http://scholar.google.com/citations?user=IQibv4UAAAAJ&amp;hl=en"> google scholar </a> <br/>
-        	      <a href="http://www.github.com/varao"> github </a> <br/>
-        	      <a href="https://www.flickr.com/photos/vinayak_apr/"> flickr </a>  <br/>
-                </p>
-        </div>
-
-<!--                <h3>Links</h3>
-        <div id="link">
-        	<p> <a href="http://scholar.google.com/citations?user=IQibv4UAAAAJ&amp;hl=en"> Google scholar </a> <br/>
-        	    <a href="https://www.flickr.com/photos/vinayak_apr/"> Flickr </a>  <br/>
-                </p>
+    <!-- Main content -->
+    <div id="container">
+        <div id="sidebar">
+            <div id="image">
+                <img src="headshot.jpg" alt="Your photo" />
             </div>
-             <a href="MISC/papers_wc_col.png"> Word Cloud </a>  <br/> -->
+            <div id="contact-details">
+              <br>
+                <h3> <a href="mailto:varao@purdue.edu"><b>varao</b>(at)<b>purdue.edu</b></a></h3>
+            	<p>MATH 508  <br>
+                  150 N University St, <br> 
+ 		          W. Lafayette, IN 47907<br />
+                  Ph: 765-494-3956 <br><br>
+        	      <a class="spaced-para" href="cv_vrao_latest.pdf"> cv </a>  
+        	      <a class="spaced-para" href="http://scholar.google.com/citations?user=IQibv4UAAAAJ&amp;hl=en"> google scholar </a> 
+        	      <a class="spaced-para" href="http://www.github.com/varao"> github </a>
+        	      <a href="https://www.flickr.com/photos/vinayak_apr/"> flickr </a> 
+            </div>
         </div>
-        
-            <div id="content_2">
 
-                  <h4> Research Interests: </h4>
+        <div id="main-content">
+          <!-- <h1>About Me</h1> -->
+            <p>
+            I am an Associate Professor at the Department of <a href="http://www.stat.purdue.edu">Statistics</a> at Purdue University, with a courtesy appointment in
+                  <a href="https://www.cs.purdue.edu/">Computer Science</a>. Before this, I was a postdoc at Duke University working with David Dunson. I obtained my PhD from the Gatsby Unit at the University College London, working with Yee Whye Teh.
+                  <br/><br/>
+            </p>
+                  
+            <p>
+            Broadly, I am interested in how ideas and tools from statistics, computation and stochastic processes can help develop statistical models that are flexible and robust, and algorithms that are efficient. Particular areas of interest include Bayesian nonparametrics, generative models, continuous-time models, Markov chain Monte Carlo and variational inference.
+            </p>
 
-                  <ul>
-                     <li> Bayesian nonparametrics: <br/>
-                          &nbsp; &nbsp; Dependent nonparametric models, MCMC methods and deterministic approximations for efficient inference in nonparametric models    </li>
-
-                     <li> Continuous time stochastic processes: <br/>
-                          &nbsp; &nbsp; MCMC methods for inference in Markov jump processes and continuous time Bayesian networks </li>
-
-                     <li> Point processes: <br/> &nbsp; &nbsp; Nonstationary renewal processes and repulsive point processes </li>
-                     <li> Markov chain Monte Carlo for doubly intractable problems </li>
-                     <li> Machine learning </li>
-                 </ul>
-
-          <h4> Select recent preprints/publications: </h4>
+                 <br>
+                 <br>
+          <h3> Select recent preprints/publications: </h3>
+                 <br>
             <ul>
                   <li> Pei, X., Kim, M. and Rao, V.A. (2026) <br/>
-                    <b> Exact Gibbs sampling for stochastic differential equations with gradient drift and constant diffusion </b> </br/> 
+                    <b> Exact Gibbs sampling for stochastic differential equations with gradient drift and constant diffusion.  </b> 
                     <a href="https://arxiv.org/abs/2602.00512">[arxiv:2602.00512]</a>
                     <br/>
                          <br/>
                     </li>
                 <li> Banerjee, I., Honnappa, H., and Rao, V.A. (2025) <br/>
-                    <b> Offline Estimation of Controlled Markov Chains: Minimaxity and Sample Complexity </b><br/>
-                    Operations Research
+                    <b> Offline Estimation of Controlled Markov Chains: Minimaxity and Sample Complexity.</b>
+                    <i>Operations Research </i>
                     <a href="https://pubsonline.informs.org/doi/abs/10.1287/opre.2023.0046">[abs]</a>
                     <br/>
                          <br/>
                     </li>
 
                 <li> Beraha, M., Favaro, S. and Rao, V.A. (2024) <br/>
-                    <b> MCMC for Bayesian nonparametric mixture modeling under differential privacy </b><br/>
-                    Journal of Computational and Graphical Statistics
+                    <b> MCMC for Bayesian nonparametric mixture modeling under differential privacy. </b>
+                    <i>J. Comput. Graph. Stat.</i>
                     <a href="https://www.tandfonline.com/doi/pdf/10.1080/10618600.2024.2410911">[pdf]</a>
                     <br/>
                          <br/>
                     </li>
 
                 <li> Awan, J., and Rao, V.A. (2023) <br/>
-                    <b> Privacy-aware rejection sampling </b><br/>
-                    Journal of Machine Learning Research
+                    <b> Privacy-aware rejection sampling. </b>
+                    <i>J. of Mach. Learn. Res.</i>
                     <a href="https://www.jmlr.org/papers/v24/21-0870.html">[abs]</a>
                     <br/>
                          <br/>
                     </li>
 
                 <li> Ju, N., Awan, J., Gu R. and Rao, V.A. (2022) <br/>
-                    <b> Data augmentation MCMC for bayesian inference from privatized data </b><br/>
-                    Advances in Neural Information Processing Systems 
+                    <b> Data augmentation MCMC for bayesian inference from privatized data. </b>
+                    <i>NeurIPS</i>
                     <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/529d0f9b0fb7c8d4b7d52221faee48d6-Abstract-Conference.html">[abs]</a>
                     <br/>
                          <br/>
                     </li>
-
-              <!-- 
-                  <li> Zhang, B. and Rao, V.A. (2020) <br/>
-                    <b> Efficient parameter sampling for Markov jump processes </b> </br/> 
-                    Journal of Computational and Graphical Statistics  <br/>
-                    <a href="http://arxiv.org/abs/1704.02369">[arxiv:1704.02369]</a>
-                    <br/>
-                         <br/>
-                    </li>
-                
-                     <li> Yang, J., Rao, V.A., and Neville, J. (2019)  <br/>
-                <b> A Stein-Papangelou Goodness-of-Fit Test for Point Processes. 
-                </b> <br/>
-                  Artificial Intelligence and Statistics (AISTATS 2019) (oral) <br/>
-                  <a href="http://proceedings.mlr.press/v89/yang19a/yang19a.pdf">[pdf]</a>
-                <br/> <br/>
-                </li>
-
-                 <li> Rao, V.A., Adams,R.P. and Dunson, D.B. (2016) <br/>
-                    <b> Bayesian inference for Mat&#233;rn repulsive processes </b><br/>
-                    Journal of the Royal Statistical Society, Series-B <br/>
-                    <a href="http://arxiv.org/abs/1308.1136">[arxiv:1308.1136]</a>
-                         <a href="pubs/matern_supp.pdf" >[supplementary]</a>
-                    <a href="bibtex.html#RaoAdDun2013">[bibtex]</a><br/>
-                         <br/>
-                    </li>
-                    <li> Rao, V.A., Lin, L. and Dunson, D.B. (2016) <br/>
-                    <b> Data augmentation for models based on rejection sampling </b> <br/>
-                    Biometrika <br/>
-                    <a href="http://biomet.oxfordjournals.org/content/early/2016/05/06/biomet.asw005">[Biometrika]</a>
-                    <a href="bibtex.html#RaoLinDun2014">[bibtex]</a><br/>
-                         <br/>
-                    </li>
-                        <li> Rao,V.A. and Teh, Y.W. (2013) <br/>
-                         <b> Fast MCMC sampling for Markov jump processes and extensions </b> <br/>
-                         Journal of Machine Learning Research 14:3295−3320, 2013<br/>
-                         <a href="pubs/rao13a.pdf"
-                         onclick="_gaq.push(['_trackPageview','pubs/rao13a.pdf'])">[pdf]</a>
-                         <a href="http://jmlr.org/papers/v14/rao13a.html">[JMLR]</a>
-                         <a href="bibtex.html#RaoTeh2013a">[bibtex]</a> <br/>
-                         <br/>
-
-                    </li>
-                         <li> Rao,V.A. and Teh, Y.W. (2009) <br/>
-                         <b>Spatial normalized Gamma processes </b> <br/>
-                         Advances in Neural Information Processing Systems 22 (NIPS 2009) <br/>
-                         <a href="pubs/RaoTeh2009.pdf"
-                         onclick="_gaq.push(['_trackPageview','RaoTeh2009.pdf'])">[pdf]</a>
-                         <a href="bibtex.html#RaoTeh2009">[bibtex]</a><br/>
-                         <br/>
-                    </li>
-                    -->
-
-                    </ul>
-            </div>
-	</div>
+        </div>
     </div>
-</div>
-
- <!-- <p>  <a href="http://validator.w3.org/check?uri=referer"><img
-          src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
-            </p> -->
 </body>
 </html>

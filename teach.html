@@ -1,99 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Vinayak Rao</title>
-<link href="defaultstyles.css" rel="stylesheet" media="screen" />
-<script type="text/javascript" src="branding.js"></script>
-
-
-<script type="text/javascript" >
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-54215214-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div id="container">
-    <div id="wrapper">
-      <div id="banner">
-        <div id="banner_left">
+    <!-- Header -->
+    <header id="header">
+        <div id="title" class="left">
           <h1> <a href="http://www.stat.purdue.edu/~varao" class="white">Vinayak Rao</a></h1>
-      	  <a href="http://www.stat.purdue.edu" class="white">Department of Statistics</a>
+      	  <a href="http://www.stat.purdue.edu" class="gold">Department of Statistics</a>
         </div>
-        <a href="http://www.purdue.edu"><img src="logo.png" alt = "Purdue logo" title="Purdue logo" id="pu_logo" /></a>
-      </div>
-      <div id="nav">
-    	<ul>
-      	<li><a href="index.html">Home</a></li>
+        <div class="right">
+        <a href="http://www.purdue.edu"><img src="logo.png" id="pu-logo" alt = "Purdue logo" title="Purdue logo"/></a>
+          </div>
+    </header>
+    
+    <!-- Links Section -->
+    <div class="links">
+        <ul>
+      	    <li><a href="index.html">Home</a></li>
             <li><a href="people.html">People</a></li>
-            <li><a href="pubs.html">Publications</a></li>
+            <li><a href="http://scholar.google.com/citations?user=IQibv4UAAAAJ&amp;hl=en">Publications</a></li>
             <li><a href="teach.html">Teaching</a></li>
-
         </ul>
-      </div>
     </div>
 
-  <div id="page">
-    <div class="news">
-      <h3> Spring 2024 </h3>
+    <!-- Main content -->
+    <div id="container">
+
+        <div id="main-content">
+      <h3> Spring 2026 </h3>
+      <br>
        <ul>
-         <li>STAT656: Bayesian Data Analysis </li>
-               (<a href="misc/stat656_syllabus.pdf">Syllabus</a>,
-               <a href="https://purdue.brightspace.com/d2l/home/1107992">Webpage (Brightspace)</a>)
-            </li>
-         <li>STAT527: Intro to Statistical Computing </li>
-               (<a href="misc/STAT527_syllabus.pdf">Syllabus</a>,
-               <a href="https://purdue.brightspace.com/d2l/home/1108195">Webpage (Brightspace)</a>)
-            </li>
+         <li>CS/STAT242: Introduction to Data Science </li>
+               (<a href="https://catalog.purdue.edu/preview_course_nopop.php?catoid=13&coid=133334">Course Catalog</a>,
+               <a href="https://purdue.brightspace.com/d2l/home/1488261">Webpage (Brightspace)</a>)
        </ul>
-    </div>
 
-    <div class="news">
+       <br><br>
       <h3> Old </h3>
+      <br>
        <ul>
-            <!--<li><a href="https://varao.github.io/stat545_fall18/">STAT545</a> (Fall 2018) </li>-->
-            <!--<li><a href="http://www.stat.purdue.edu/~sabbaghi/teaching/STAT%20695%20Syllabus%202018.pdf">STAT695</a> (Fall 2018) </li>-->
-            <li>STAT527: Intro to Statistical Computing (asyncuronous online) </li>
-            <li>STAT656: Bayesian Data Analysis (Fall 2023) </a> <br>
-            <li>CS/STAT242: Intro to Data Science (Spring 2023) </li>
-            <li>STAT420: Intro to Time-series data (Spring 2022) </li>
-            <li>CS/STAT242 (Sprint 2021)</li>
-            <li>STAT598z: Intro to Statistical Computing (Spring 2021) </li>
-            <li>STAT695 (Fall 2020) </li>
-            <li>CS/STAT242 (Sprint 2020)</li>
-            <li>STAT545: Intro to Computational Statistics (Fall 2019) </li>
-            <li>STAT695 (Fall 2019)</li>
-            <li>STAT598z (Spring 2019) </li>
-            <li>STAT545 (Fall 2018) </li>
-            <li>STAT695 (Fall 2018)</li>
-            <li>STAT598z (Spring 2018) </li>
-            <li>STAT545 (Fall 2017) </li>
-            <li>STAT695 (Fall 2017)</li>
-            <li>STAT598z (Spring 2017)</li>
-            <li>STAT545 (Fall 2016) </li>
-            <li>STAT695 (Fall 2016)</li>
-            <li>STAT598 (Spring 2016) </li>
-             <li>STAT545 (Fall 2015) </li>
-            <li>STAT598Z_Spring15 (Spring 2015) </li>
-             <li>STAT545_Fall14 (Fall 2014)</li>
-           <!--  <li><a href="STAT598Z/main.html">STAT598</a> (Spring 2016) </li>
-             <li><a href="STAT545/main.html">STAT545</a> (Fall 2015) </li>
-            <li><a href="STAT598Z_Spring15/main.html">STAT598Z_Spring15</a> (Spring 2015) </li>
-             <li><a href="STAT545_Fall14/main.html">STAT545_Fall14</a> (Fall 2014)</li>
-           -->
+         <li>CS/STAT242: <i>Intro. to Data Science</i>.<br> &nbsp &nbsp Spring (2020-2021, 2023-2025)</li>
+         <br>
+         <li>STAT656 (formerly STAT695): <i>Bayesian Data Analysis</i>.<br> &nbsp &nbsp Fall (2016-2021, 2023-2025) </a> <br>
+         <br>
+         <li>STAT527 (formerly STAT598z): <i>Intro. to Computing for Statistics</i>.<br> &nbsp &nbsp Spring (2015-2019, 2012), Fall (2024-2025) 
+            </li>
+            <br>
+         <li>STAT420: <i>Intro. to Time-series data</i>. <br> &nbsp &nbsp Spring 2022 </li>
+         <br>
+            <li>STAT545: <i>Intro. to Computational Statistics</i>.<br> &nbsp &nbsp Fall (2014-2019) </li>
        </ul>
+        </div>
     </div>
-  </div>
-
-</div>
 </body>
 </html>

@@ -1,0 +1,287 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+	width:890px;
+	margin:auto;
+    /*font-family: Arial, sans-serif; */
+	font-family:"Lucida Sans Unicode", "Lucida Grande", Helvetica, Arial,  sans-serif;
+    font-size: 16px; /* Base font size for the body */
+	background-color:#272727;
+}
+
+html {
+    font-size: 16px; /* Set base font size to 16px */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between; /* Distribute space between left and right */
+    align-items: center; /* Vertically center text */
+    padding: 10px 5px;
+    background-color: #333;
+    color: #DDD;
+    font-size: 1.25rem; /* Font size of 20px based on the base font size */
+    max-width: 890px; /* Match the content's width */
+    margin: 0 auto; /* Center the header */
+}
+
+header .left {
+    margin-left: 5px;
+    text-align: left;
+    width: 50%;
+}
+
+header .right {
+    text-align: right;
+    width: 50%;
+}
+
+
+
+/* Links Section */
+.links {
+    margin: 20px 0;
+    max-width: 980px; /* Match the content's width */
+    margin: 0 auto; /* Center the links section */
+    padding: 8px 8px;
+	border-top:3px solid #c2972e;
+	border-bottom:1px solid #c2972e;
+}
+
+.links ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+.links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    font-size: 1.1rem; /* Font size of 16px based on the base font size */
+}
+
+a:hover {
+    color: #CCC; /* Hover effect */
+}
+
+/* Container for Sidebar and Main Content */
+#container {
+    display: flex; /* Flexbox to create the two-column layout */
+    gap: 20px; /* Space between the sidebar and main content */
+    justify-content: space-between;
+    max-width: 980px; /* Limit the overall width of the content */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    /* align-items: flex-start; */
+}
+
+.spaced-para {
+  display: block;
+     margin-bottom: 2px;
+}
+
+a { color: #66CCEE;  text-decoration: none; }
+a.white { color: white}
+a.gold { color: #c2972e }
+
+#title {
+	font-family:"Lato", "Lucida Sans Unicode", "Lucida Grande", Helvetica, Arial,  sans-serif;
+	font-size:1.2rem;
+}
+
+#pu-logo {
+  width: 40%;
+  height: auto;
+}
+
+h1 {
+	margin:0;
+	padding: 0;
+    font-family:"Palatino", "Times";
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 250px; /* Fixed width for the sidebar */
+	background-color:#333;
+    padding: 24px;
+	border: 1px solid #c2972e;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow wrapping of the content */
+}
+
+#image {
+    text-align: left; /* Align image to the left */
+    margin-bottom: 10px;
+    display: flex; /* Make image and contact details align in a row */
+    align-items: flex-start; /* Align items at the top */
+	background-color:#333;
+	color:#CCC;
+}
+
+#image img {
+    width: 200px; /* Set image to a fixed size (no shrinking in normal mode) */
+    height: 200px; /* Set image to a fixed size (no shrinking in normal mode) */
+    object-fit: cover; /* Ensure the image covers the space without distortion */
+    margin-right: 15px; /* Space between image and contact info */
+}
+
+#contact-details {
+    text-align: left; /* Align contact details text to the left */
+    width: auto; /* Let contact details take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align contact info to the top */
+	color:#CCC;
+    font-size: .85rem; /* 16px */
+}
+
+#contact-details h3 {
+    font-size: .8rem; /* 16px */
+    margin-bottom: 10px;
+}
+
+#main-content {
+    flex: 1; /* The main content should take the remaining space */
+	background-color:#272727;
+	color:#CCC;
+    padding:10px;
+    font-family:"Lato", "Lucida Sans Unicode", "Lucida Grande", Helvetica, Arial,  sans-serif;
+    line-height: 1.4;
+    /*border: 1px solid #ddd;
+    border-radius: 8px; */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns */
+  gap: 5px;
+  justify-items: center; /* center each item in its column */
+}
+
+.img-box {
+  width: 120px;   /* fixed width */
+  height: 150px;  /* fixed height */
+  background-color: #333; /* optional letterbox color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* scale inside box, minimal cropping */
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        font-size: .9rem; /* Slightly smaller font on mobile */
+    }
+
+    header {
+        font-size: 1.125rem; /* 18px for smaller screens */
+    }
+
+    .links a {
+        font-size: 0.875rem; /* Smaller font for links */
+    }
+
+    #pu-logo {
+      width: 65%;
+      height: auto;
+    }
+
+    #title {
+    	font-family:"Lato", "Lucida Sans Unicode", "Lucida Grande", Helvetica, Arial,  sans-serif;
+	    font-size:0.9rem;
+    }
+
+    #container {
+        flex-direction: column; /* Stack the sidebar and content vertically */
+        gap: 10px; /* Smaller gap between sidebar and main content */
+        padding: 0; /* Remove padding to use all horizontal space */
+    }
+
+    /* Fixing the layout of the sidebar for small screens */
+    #sidebar {
+        width: 100%; /* Sidebar takes full width on smaller screens */
+        margin-bottom: 0px; /* Space between the sidebar and main content */
+        padding: 10px 5px; /* Reduce padding to use all available space */
+        display: flex;
+        flex-direction: row; /* Align items horizontally */
+        justify-content: flex-start; /* Keep content at the top */
+        border-radius: 0px;
+        gap: 10px; /* Allow space between image and contact details */
+    }
+
+    #image {
+        width: 55%; /* Resize image for mobile */
+        max-width: 200px;
+        height: auto; /* Resize image for mobile */
+        margin-right: .5rem; /* Space between the image and the contact details */
+    }
+
+    #contact-details {
+        text-align: left;
+        width: 40%; /* Let contact details take available space */
+        font-size: 0.85rem; /* 14px */
+    }
+
+    #contact-details h3 {
+        font-size: .9rem; /* 16px */
+    }
+
+    #contact-details p {
+    }
+
+    #main-content {
+        width: 100%; /* Ensure the main content takes full width */
+    }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 5px;
+      justify-items: center; /* center each item in its column */
+    }
+
+}
+
+/* Adjust layout for very small screens (mobile phones) */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem; /* Even smaller font on very small screens */
+    }
+
+    header {
+        font-size: 1rem; /* 16px for very small screens */
+    }
+
+    .links a {
+        font-size: 1.0rem; /* Smaller font for links */
+    }
+
+    #contact-details p {
+        font-size: 0.8rem; /* 12px for very small screens */
+    }
+}
+
