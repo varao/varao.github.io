@@ -218,7 +218,7 @@ h1 {
     #container {
         flex-direction: column; /* Stack the sidebar and content vertically */
         gap: 10px; /* Smaller gap between sidebar and main content */
-        padding: 0; /* Remove padding to use all horizontal space */
+        padding: 2px; /* Remove padding to use all horizontal space */
     }
 
     /* Fixing the layout of the sidebar for small screens */
